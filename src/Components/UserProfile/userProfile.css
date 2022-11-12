@@ -1,0 +1,12 @@
+.userProfile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 7vw;
+}
+
+.userProfile img {
+    width: 8vh;
+    height: 8vh;
+    padding: 1.5rem;
+}

@@ -1,0 +1,7 @@
+.mainContainer {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+    background-color: rgba(0, 0, 0, 0.20);
+    border-radius: 30px;
+}
