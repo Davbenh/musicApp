@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 .App {
     width: 90vw;
-    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

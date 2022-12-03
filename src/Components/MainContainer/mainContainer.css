@@ -1,7 +1,19 @@
 .mainContainer {
     display: flex;
-    width: 100%;
-    min-height: 600px;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    height: 60vh;
     background-color: rgba(0, 0, 0, 0.20);
     border-radius: 30px;
+    margin-top: 5vh;
+    padding: 3%;
+    width: 80vw;
+}
+
+@media only screen and (max-width: 720px) {
+    .mainContainer {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 100%;
+    }
 }

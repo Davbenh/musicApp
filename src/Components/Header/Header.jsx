@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <header>
 <Logo />
-<Search />
+<Search searchUpdate={props.searchUpdate} />
 <UserProfile/>
 </header>
   )

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Noto+Sans+Hebrew:wght@500&display=swap');
+.songCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: antiquewhite;
+    border-radius: 15px;
+    margin: 10px 0;
+    height: 25%;
+    width: 80%;
+    box-shadow: 1px 1px rgba(241, 234, 234, 0.124);
+    text-align: center;
+    cursor: pointer;
+}
+
+.songCard:hover {
+    transform: scale(1.05);
+    background-color: rgba(240, 248, 255, 0.278);
+}
+
+.songCardImg {
+    width: 50%;
+    height: 100%;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+}
+
+.title {
+    color: burlywood
+}
+
+.time {
+    color: rgb(147, 43, 202);
+}
+
+.uptime {
+    font-size: smaller;
+    color: beige;
+}

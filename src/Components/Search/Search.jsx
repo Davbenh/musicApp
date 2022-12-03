@@ -1,12 +1,12 @@
 import './search.css';
 
-export default function Search() {
+export default function Search(props) {
   return (
-    <div class="container">
-      <input type="text" name="search" placeholder="Search for your fav music" class="input" />
+    <div className="container">
+      <input type="text" name="search" placeholder="Search for your fav music" className="input" onChange={(e) => { props.searchUpdate(e)} }/>
 
-      <a href="dasdas" class="btn">
-        <i class="fas fa-search"></i>
+      <a href="dasdas" className="btn">
+        <i className="fas fa-search"></i>
       </a>
       </div>
         )

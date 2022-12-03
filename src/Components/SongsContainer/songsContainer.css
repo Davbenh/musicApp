@@ -1,0 +1,39 @@
+.songsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    width: 40%;
+    overflow: scroll;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.songsContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.songsContainer::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+}
+
+.songsContainer::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+@media only screen and (max-width: 720px) {
+    .songsContainer {
+        width: 100%;
+        height: 80%;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
