@@ -8,3 +8,10 @@
     height: 90%;
     animation: fadein 1s;
 }
+
+@media only screen and (max-width: 720px) {
+    .logo {
+        width: 60%;
+        height: 60%;
+    }
+}

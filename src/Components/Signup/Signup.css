@@ -1,4 +1,4 @@
-.login-page {
+.signup-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     height: 100%;
 }
 
-.login {
+.signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,12 +22,12 @@
     margin-top: 10vh;
 }
 
-.login>.logo {
+.signup>.logo {
     margin: auto;
     max-width: 70%;
 }
 
-.login>.form {
+.signup>.form {
     margin-bottom: 98px;
     margin-top: 41px;
 }
@@ -107,6 +107,7 @@ button.secondary:hover {
 }
 
 .errorMsg {
+    direction: rtl;
     display: inline-block;
     color: #c4c4c4;
     margin-bottom: 0.6rem;

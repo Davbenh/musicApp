@@ -1,14 +1,16 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import Header from "../Header/Header";
 import MainContainer from "../MainContainer/MainContainer";
 import axios from 'axios';
+import { LoggedInStatus } from '../../App';
+import { Navigate } from 'react-router-dom';
 
 function Home() {
     const [searchInput, setSearchInput] = useState("");
     const [songsData, setSongsData] = useState("");
     const [filterSongsData, setFilterSongsData] = useState([]);
     const [videoPath, setVideoPath] = useState("https://www.youtube.com/embed/ozO_rKRYeMY");
-   
+    const {loggedIn} = useContext(LoggedInStatus)
   
     useEffect(() => {
       const options = {
@@ -59,10 +61,12 @@ function Home() {
 
 
   return (
-    <>
+   
+    !loggedIn ? <Navigate to="/Login"/> : 
+      <>
       <Header searchUpdate={searchUpdate} filterSongsData={filterSongsData} />
       <MainContainer songsData={songsData} filterSongsData={filterSongsData} videoPath={videoPath} setVideoPath={setVideoPath}/> 
-    </>
+      </>
   )
 }
 

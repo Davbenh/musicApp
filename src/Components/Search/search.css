@@ -8,14 +8,14 @@
     align-items: center;
     cursor: pointer;
     transition: 1.8s;
-    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4);
     -webkit-transition: 1s;
     transition: 1s;
 }
 
-.container:hover .input {
-    transition: 1s;
-    width: 21vw;
+.container:hover {
+    transform: scale(1.1);
+    /* width: 21vw; */
 }
 
 .container .input {

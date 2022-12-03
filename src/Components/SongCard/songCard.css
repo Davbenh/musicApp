@@ -23,6 +23,7 @@
 .songCardImg {
     width: 50%;
     height: 100%;
+    min-height: 100%;
 }
 
 .desc {
@@ -34,6 +35,9 @@
     font-family: 'Arimo', sans-serif;
     font-family: 'Noto Sans Hebrew', sans-serif;
     overflow: hidden;
+    min-width: 50%;
+    height: 90%;
+    max-height: 90%;
 }
 
 .title {

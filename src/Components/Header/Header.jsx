@@ -5,7 +5,7 @@ import UserProfile from '../UserProfile/UserProfile';
 
 function Header(props) {
   return (
-    <header>
+ <header className='header'>
 <Logo />
 <Search searchUpdate={props.searchUpdate} />
 <UserProfile/>
