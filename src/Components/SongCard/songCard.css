@@ -7,10 +7,12 @@
     border-radius: 15px;
     margin: 10px 0;
     height: 25%;
+    min-height: 25%;
     width: 80%;
     box-shadow: 1px 1px rgba(241, 234, 234, 0.124);
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .songCard:hover {
@@ -31,6 +33,7 @@
     padding: 5px;
     font-family: 'Arimo', sans-serif;
     font-family: 'Noto Sans Hebrew', sans-serif;
+    overflow: hidden;
 }
 
 .title {

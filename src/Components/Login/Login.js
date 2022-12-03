@@ -1,37 +1,34 @@
 import { useState } from "react";
-// import Dashboard from "./Dashboard";
+import './login.css'
+
 
 const Login = () => {
 const [username, setusername] = useState("");
 const [password, setpassword] = useState("");
 const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 const users = [{ username: "Jane", password: "testpassword" }];
-const handleSubmit = (e) => {
-e.preventDefault()
-const account = users.find((user) => user.username === username);
-if (account && account.password === password) {
-setauthenticated(true)
-localStorage.setItem("authenticated", true);
-}
-};
+
+
 return (
-<div>
-<p>Welcome Back</p>
-<form onSubmit={handleSubmit}>
-<input
-type="text"
-name="Username"
-value={username}
-onChange={(e) => setusername(e.target.value)}
-/>
-<input
-type="password"
-name="Password"
-onChange={(e) => setpassword(e.target.value)}
-/>
-<input type="submit" value="Submit" />
-</form>
-</div>
+    <div className="login-page">
+    <div className="login">
+    <img src="./images/musicapp-logo.png" className="logo" alt="Business view - Reports" />
+    <form className="form" /*onSubmit={this.handleSubmit}*/>
+      <div className="input-group">
+        <label htmlFor="username">שם משתמש</label>
+        <input type="text" name="username" placeholder="username" />
+      </div>
+      <div className="input-group">
+        <label htmlFor="password">סיסמא</label>
+        <input type="password" name="password" />
+      </div>
+      <button className="primary" /*onClick={this.handleClick}*/>כניסה</button>
+    </form>
+    <button className="secondary" >
+     הרשמה
+    </button>
+  </div>
+  </div>
 )
 };
 

@@ -6,4 +6,5 @@
 
 .logo img {
     height: 90%;
+    animation: fadein 1s;
 }
