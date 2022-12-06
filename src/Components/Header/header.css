@@ -1,19 +1,20 @@
-    .header {
-        background-color: rgba(0, 0, 0, 0.5);
-        height: 15vh;
-        display: flex;
-        justify-content: flex-end;
-        box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        margin: 2%;
-        border-radius: 75px;
-        overflow: hidden;
-        width: 95%;
-    }
-    
-    @media only screen and (max-width: 720px) {
-        .header {
-            width: 110%;
-            border-radius: 0px;
-        }
-    }
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 17vh;
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  margin: 2%;
+  border-radius: 75px;
+  overflow: hidden;
+  width: 95%;
+  padding-right: 20px;
+}
+
+@media only screen and (max-width: 720px) {
+  .header {
+    width: 110%;
+    border-radius: 0px;
+  }
+}
