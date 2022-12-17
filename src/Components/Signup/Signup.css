@@ -4,6 +4,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    padding-bottom: 20px;
+    ;
 }
 
 .signup {
@@ -14,22 +16,22 @@
     background: rgba(47, 47, 47, 0.6);
     border-radius: 4px;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
-    max-width: 500px;
-    padding-bottom: 66px;
-    padding-top: 46px;
+    max-width: 600px;
+    padding-bottom: 20px;
+    padding-top: 30px;
     text-align: center;
     width: 50%;
-    margin-top: 10vh;
+    margin-top: 3vh;
 }
 
 .signup>.logo {
     margin: auto;
-    max-width: 70%;
+    max-width: 30%;
 }
 
 .signup>.form {
-    margin-bottom: 98px;
-    margin-top: 41px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .input-group {
@@ -62,6 +64,20 @@
     transition: all 0.3s;
 }
 
+.input-group>select {
+    display: inline-block;
+    background: #f2f2f5;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    color: #676767;
+    font-size: 16px;
+    height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
 .input-group>input:focus {
     background: #fff;
     border-color: #c4c4c4;
@@ -84,7 +100,7 @@ button {
     max-width: 420px;
     outline: 0;
     padding: 10px 0;
-    transition: background 0.3s;
+    transition: all 0.3s;
     width: 80%;
 }
 
@@ -97,20 +113,34 @@ button.primary:hover {
 }
 
 button.secondary {
+    font-size: smaller;
     width: 20vw;
+    margin: 10px;
     background: #060706;
 }
 
 button.secondary:hover {
-    width: 20vw;
     background: #515151;
 }
 
 .errorMsg {
     direction: rtl;
-    display: inline-block;
+    display: block;
     color: #c4c4c4;
     margin-bottom: 0.6rem;
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.select-select {
+    font-family: 'Roboto', sans-serif;
+    max-width: 420px;
+    text-align: center;
+    width: 80%;
+}
+
+@media only screen and (max-width: 720px) {
+    .signup {
+        width: 90%;
+    }
 }

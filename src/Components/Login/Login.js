@@ -1,54 +1,61 @@
-import { useState, useContext } from "react";
-import { Navigate,Link } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { Navigate, Link } from "react-router-dom";
 import { LoggedInStatus } from "../../App";
 import "./login.css";
 
 const Login = () => {
-  const { loggedIn, setLoggedIn,users,setUsers,myUser,setMyUser } = useContext(LoggedInStatus);
-  const [uName, setuName] = useState("");
+  const { loggedIn, setLoggedIn, users, setUsers, myUser, setMyUser } =
+    useContext(LoggedInStatus);
+  const [logLoading, setLogLoading] = useState(false);
+  const [uEmail, setUEmail] = useState("");
   const [uPass, setuPass] = useState("");
   const [errorMessages, setErrorMessages] = useState("");
- 
 
-  function handleClick(e) {
+  const handleClick = async (e) => {
     e.preventDefault();
-    const userData = users.find((user) => user.username === uName);
-
-    // Compare user info
-    if (userData) {
-      if (userData.password !== uPass) {
-        // Invalid password
-        setErrorMessages("פרטי התחברות שגויים");
-      } else {
-        setMyUser(uName);
-        setLoggedIn(true);
-        <Navigate to="/home" />
-      }
-    } else {
-      // Username not found
-      setErrorMessages("פרטי התחברות שגויים");
-    }
+    fetch("http://localhost:3456/api/user/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: uEmail,
+        password: uPass,
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("token", JSON.stringify("Bearer " + data.token));
+        setLogLoading(true)
+      })
+      .catch((err) => {
+        setErrorMessages("סיסמא או שם משתמש לא נכונים");
+      })
   }
 
+  useEffect(() => {
+
+  
+
+  }, [logLoading])
+  
+  
   return loggedIn ? (
     <Navigate to="/home" />
   ) : (
     <div className="login-page">
       <div className="login">
-        <img
-          src="./images/musicapp-logo.png"
-          className="logo"
-          alt="Business view - Reports"
-        />
+        <img src="./images/musicapp-logo.png" className="logo" alt="logo" />
         <form className="form">
           <div className="input-group">
-            <label htmlFor="username">שם משתמש</label>
+            <label htmlFor="username">אימייל</label>
             <input
-              type="text"
-              name="username"
-              placeholder="username"
+              type="email"
+              name="email"
+              placeholder="אימייל"
               onChange={(e) => {
-                setuName(e.target.value);
+                setUEmail(e.target.value);
               }}
             />
           </div>
@@ -67,7 +74,9 @@ const Login = () => {
             כניסה
           </button>
         </form>
-        <Link to="/Signup"><button className="secondary">הרשמה</button></Link>
+        <Link to="/Signup">
+          <button className="secondary">הרשמה</button>
+        </Link>
       </div>
     </div>
   );
