@@ -4,8 +4,7 @@ import { LoggedInStatus } from "../../App";
 import "./login.css";
 
 const Login = () => {
-  const { loggedIn, setLoggedIn, users, setUsers, myUser, setMyUser } =
-    useContext(LoggedInStatus);
+  const { loggedIn, setLoggedIn, myUser, setMyUser } = useContext(LoggedInStatus);
   const [logLoading, setLogLoading] = useState(false);
   const [uEmail, setUEmail] = useState("");
   const [uPass, setuPass] = useState("");
@@ -25,21 +24,18 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        localStorage.setItem("token", JSON.stringify("Bearer " + data.token));
-        setLogLoading(true)
+        localStorage.setItem("Authorization", `Bearer ` + data.token);
+        {setTimeout(() => {
+          window.location.href = "/";
+        }, 1300)}
+        
       })
       .catch((err) => {
+        console.error(err);
         setErrorMessages("סיסמא או שם משתמש לא נכונים");
       })
   }
 
-  useEffect(() => {
-
-  
-
-  }, [logLoading])
-  
   
   return loggedIn ? (
     <Navigate to="/home" />

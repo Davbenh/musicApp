@@ -9,7 +9,7 @@ function UserProfile(props) {
   return (
     <div className='userProfile'>
         <img src="./images/userProfile.png" alt="userNameImg"/>
-        <span className="hellouser">ברוך הבא,  {myUser}</span>
+        <span className="hellouser">ברוך הבא,{myUser.fName}</span>
     </div>
   )
 }
