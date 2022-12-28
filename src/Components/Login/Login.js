@@ -1,11 +1,10 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext} from "react";
 import { Navigate, Link } from "react-router-dom";
 import { LoggedInStatus } from "../../App";
 import "./login.css";
 
 const Login = () => {
-  const { loggedIn, setLoggedIn, myUser, setMyUser } = useContext(LoggedInStatus);
-  const [logLoading, setLogLoading] = useState(false);
+  const { loggedIn} = useContext(LoggedInStatus);
   const [uEmail, setUEmail] = useState("");
   const [uPass, setuPass] = useState("");
   const [errorMessages, setErrorMessages] = useState("");
@@ -35,6 +34,7 @@ const Login = () => {
         setErrorMessages("סיסמא או שם משתמש לא נכונים");
       })
   }
+
 
   
   return loggedIn ? (

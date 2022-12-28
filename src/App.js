@@ -10,7 +10,7 @@ export const LoggedInStatus = createContext("default");
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [myUser, setMyUser] = useState({fName : "guest", email : "noemail"});
+  const [myUser, setMyUser] = useState({_id: "" ,fName : "guest", email : "noemail"});
 
   useEffect(() => {
     const tokenHeader = localStorage.getItem("Authorization");
@@ -19,15 +19,19 @@ function App() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: tokenHeader,
+          authorization: tokenHeader,
         },
       })
         .then((response) => {
           if (response.ok) {
             return response.json();
+          } else {
+            return console.error(response)
           }
-          throw new Error('Something went wrong');})
+          })
         .then((data) => {
+          console.log(data)
+          myUser._id =  data._id;
           myUser.fName =  data.fName;
           myUser.email =  data.email;
           setLoggedIn(true);
@@ -37,7 +41,10 @@ function App() {
           setLoggedIn(false);
         })
     };
+    if(tokenHeader){
       tokenCheck();
+    }
+   
     
   }, []);
 
